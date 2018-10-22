@@ -8,14 +8,15 @@ Then numbers of the elements are going to waste the memory.
 In this case, we can use generator to `compute the next and next element on the fly`.
 
 #### It is so simple to generate a generator
-Just use `()` instead of the list comprehension using `[]`
+Just use `()` rather than list comprehension using `[]`
 
 You can use `next()` or use `for` loop
 Use `next()` may cause `StopIteration` traceback.
 
 #### Examples
 * Fibonacci
-    ```python
+
+```python
 def fib(max):
     n, a, b = 0, 0, 1
     while n < max:
@@ -23,8 +24,9 @@ def fib(max):
         a, b = b, a + b
         n = n + 1
 ```
+
 And the output:
-    ```python
+```python
 >>> fib(6)
 1
 1
