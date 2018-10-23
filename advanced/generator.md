@@ -2,7 +2,7 @@
 -------------
 From the list comprehension, we can generate a full list stored in the memory.  
 As for a very large list, though it is generated  
-`What if we just need to use few of the front index elements?`  
+`What if we just need the first few elements?`  
 Then numbers of the elements are going to waste the memory.  
 
 In this case, we can use generator to `compute the next and next element on the fly`.
