@@ -1,0 +1,13 @@
+# dir
+Coursera/code3/
+
+# archive files
+*.zip
+*.tar
+
+# vim protective file
+*.swp
+
+# Mac OSX system file
+.DS*
+
