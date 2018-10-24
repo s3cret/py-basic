@@ -1,13 +1,13 @@
 #!/usr/local/bin/python3
 '''
 In python3,
-1. map() returns a iterator rather than a list,
+1. map() returns an iterator rather than a list,
 use list(map(func, seq)) to get a list
 2. reduce() is removed from __builtins__,
 you need to import it:
 from functools import reduce
 '''
-
+# actually I just created my own str.title() function using map.
 # function to captialize the namelist
 def capitalize(lst):
     def char2lower(c):
@@ -16,7 +16,7 @@ def capitalize(lst):
         return s[0].upper() + ''.join(map(char2lower, s[1:]))
     return map(str2cap, lst)
 
-    # actually the code below does the same work as map()
+    # actually the code below does the exactly same work as map()
     #def main(lst):
     #    fixed_list = list()
     #    for each in lst:
