@@ -7,15 +7,21 @@ while True:
     address = input('Enter localtion: ')
     if len(address) < 1: break
 
+    # add parameter address to the url
     url = serviceurl + urllib.parse.urlencode({'address': address})
     print('Retrieving', url)
+    # open url handle of url file
     urlhandle = urllib.request.urlopen(url)
+    # read the whole bunch of file in
     data = urlhandle.read()
     print('Retrieved', len(data), 'characters')
+    # decode the outside world utf-8 characters
+    # to the python world unicode
     print(data.decode())
+    # create the tree structure using
+    # xml.etree.ElementTreea.fromstring()
     tree = ET.fromstring(data)
 
-    # using xml.etree.ElementTree as Et 
     results = tree.findall('result')
     lat = results[0].find('geometry').find('location').find('lat').text
     lng = results[0].find('geometry').find('location').find('lng').text

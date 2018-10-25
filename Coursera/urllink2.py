@@ -1,10 +1,5 @@
-# To run this, you can install BeautifulSoup
-# https://pypi.python.org/pypi/beautifulsoup4
-
-# Or download the file
-# http://www.py4e.com/code3/bs4.zip
-# and unzip it in the same directory as this file
-
+# Actually it is no need to import urllib.error, urllib.parse
+# unless you really need it
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import ssl
@@ -15,6 +10,7 @@ ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
 url = input('Enter - ')
+# maybe you should promote a decode()
 html = urlopen(url, context=ctx).read()
 soup = BeautifulSoup(html, "html.parser")
 
@@ -22,7 +18,9 @@ soup = BeautifulSoup(html, "html.parser")
 tags = soup('a')
 for tag in tags:
     # Look at the parts of a tag
-    print('TAG:', tag)
-    print('URL:', tag.get('href', None))
+    print('TAG itself:', tag)
+    print('URL tag attr href, default None:', tag.get('href', None))
+    # the a tag contends
     print('Contents:', tag.contents[0])
+    # all the tag's attributes
     print('Attrs:', tag.attrs)
