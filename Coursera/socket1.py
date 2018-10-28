@@ -17,5 +17,5 @@ while True:
     print(data.decode())
     #print(data)
 
-    # close socket
+# close socket
 mysock.close()
