@@ -1,3 +1,8 @@
+# python s3cret file:
+oauth.py
+hidden.py
+twurl.py
+
 # python cache dir
 __pycache__/
 
