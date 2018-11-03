@@ -1,0 +1,10 @@
+# Search for lines that have an at sign between characters
+import re
+hand = open('mbox-short.txt')
+for line in hand:
+    line = line.rstrip()
+    # re.findall() returns a list
+    # each line, print a list of result
+    x = re.findall('\S+@\S+', line)
+    if len(x) > 0:
+        print(x)
