@@ -1,7 +1,7 @@
-from student import student
+from Student import Student
 from Animals import Cat, Dog, Runky
 # create a student
-jesse = student('jesse', '100')
+#jesse = student('jesse', '100')
 
 if __name__ == '__main__':
 #    jesse.grade()
@@ -11,7 +11,7 @@ if __name__ == '__main__':
 #    print()
 #    dog = Dog()
 #    dog.run()
-    runky = Runky()
-    runky.run()
-    print(runky.get_name())
-
+#    runky = Runky()
+#    runky.run()
+#   print(runky.get_name())
+    me = Student()
