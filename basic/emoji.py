@@ -1,3 +1,4 @@
+# because python3 uses unicode internally
 emoji = '😂'
 
 print('😄')

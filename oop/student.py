@@ -29,8 +29,14 @@ class Student(object):
     __repr__ = __str__
 
     def __getattr__(self, attr):
-        if attr == 'age':
-            return 18
+        try:
+            if attr == 'age':
+                return 18
+            else:
+                raise AttributeError
+        except AttributeError:
+            print('Error:', 'module', "'" +  str(self.__class__) + '\'', 'has no attribute', '\'' + attr + '\'')
 
     def grade(self):
         print('%s: %s' % (self.__name, self.__score))
+

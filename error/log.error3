@@ -1,0 +1,18 @@
+ERROR:root:division by zero
+Traceback (most recent call last):
+  File "error3.py", line 14, in <module>
+    bar('0')
+  File "error3.py", line 9, in bar
+    return foo(s) * 2
+  File "error3.py", line 5, in foo
+    return 10 / int(s)
+ZeroDivisionError: division by zero
+ERROR:root:division by zero
+Traceback (most recent call last):
+  File "error3.py", line 14, in <module>
+    bar('0')
+  File "error3.py", line 9, in bar
+    return foo(s) * 2
+  File "error3.py", line 5, in foo
+    return 10 / int(s)
+ZeroDivisionError: division by zero
