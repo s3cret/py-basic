@@ -3,11 +3,17 @@ import os
 import time
 
 def run_proc(name):
+    """run_proc doc
+    This is the doc part.
+    If you get it, conguratulations!
+    """
     begin = time.time()
     print('Run child process %s (%s) ...' % (name, os.getpid()))
     time.sleep(2)
     end = time.time()
     print('Child process done, used %.2f seconds' % (end - begin))
+
+#print(run_proc.__doc__)
 
 if __name__ == '__main__':
     print('Parent process %s' % os.getpid())

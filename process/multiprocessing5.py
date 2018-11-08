@@ -16,7 +16,7 @@ def task2(name):
     end = time.time()
     print('--- task2 process done --- (%.2f seconds)' % (end - begin))
 
-# create 2 precess
+# create 2 process
 if __name__ == '__main__':
     print('----- Main process start ----- (%s)' % os.getpid())
     p1 = Process(target=task1, args=('jesse',))

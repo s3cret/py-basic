@@ -1,4 +1,7 @@
 class Animal:
+    '''
+    This is Animal class doc
+    '''
     def __init__(self, name=''):
         print('An Animal is being built ...')
         self.__name = name
