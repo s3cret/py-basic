@@ -22,6 +22,7 @@ class DecoratorTimer():
 
 # this one kind of sucks
 class Functimer():
+
     def __init__(self, *func, precise=3, processes=None):
         self.precise = precise
         self.func = func

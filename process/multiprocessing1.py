@@ -6,6 +6,7 @@ using which to create a child process
    in this case, child process can retrieve parent process id
    by calling os.getppid() function
 '''
+
 import os
 
 if __name__ == '__main__':
