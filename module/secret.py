@@ -1,0 +1,2 @@
+import deleteme
+deleteme.secret()
