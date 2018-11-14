@@ -1,45 +1,29 @@
-'''To create threads local variables
-The usually usage of ThreadLocal is, for example, binding a database
-to a thread, or binding http-request to a thread handling a user's
-authentication.
-'''
 import threading
-import time, random
+import time
+import random
 
-local_school = threading.local()
+thread_locals = threading.local()
 
-def task1_1():
-    print('I am %s from %s' % (local_school.name, threading.currentThread().name))
-    time.sleep(random.random())
-    print('Again, I am %s from %s' % (local_school.name, threading.currentThread().name))
+def task1():
+    thread_locals.number = 1
+    print('%s start' % threading.currentThread().name)
+    while True:
+        print('%s I am preforming the computing things.' % thread_locals.number)
+        time.sleep(random.random() * 3)
 
-def thread1_do():
-    # do nothing but create a subcall calling task1()
-    task1_1()
+def task2():
+    thread_locals.number = 2
+    print('%s start' % threading.currentThread().name)
+    while True:
+        print('%s Gui is running' % thread_locals.number)
+        time.sleep(random.random())
 
-def task2_1():
-    print('I am %s from %s' % (local_school.name, threading.currentThread().name))
-    time.sleep(random.random())
-    print('Again, I am %s from %s' % (local_school.name, threading.currentThread().name))
+gui_thread = threading.Thread(target=task2, name='GUI-thread')
+working_thread = threading.Thread(target=task1, name='Working-thread')
 
-def thread2_do():
-    # do nothing but create a subcall calling task1()
-    task2_1()
+working_thread.start()
+gui_thread.start()
 
-# thread1 do a lot of works
-# including task1_1, task1_2
-def thread1(name):
-    local_school.name = name
-    thread1_do()
+working_thread.join()
+gui_thread.join()
 
-def thread2(name):
-    local_school.name = name
-    thread2_do()
-
-if __name__ == '__main__':
-    t1 = threading.Thread(target=thread1, args=('jesse',), name='Thread-A')
-    t2 = threading.Thread(target=thread1, args=('s3cret',), name='Thread-B')
-    t1.start()
-    t2.start()
-    t1.join()
-    t2.join()
