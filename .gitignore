@@ -3,6 +3,10 @@ oauth.py
 hidden.py
 twurl.py
 
+# email key files:
+key
+key.json
+
 # python cache dir
 __pycache__/
 
