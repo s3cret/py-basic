@@ -35,8 +35,8 @@ def main():
     <p>send by <a href="http://www.python.org">Python</a>...</p>
     </body></html>'''
 
-    # msg = MIMEText('message1', 'plain', 'utf-8')
-    msg = MIMEText(html_message, 'html', 'utf-8')
+    msg = MIMEText(message1, 'plain', 'utf-8')
+    # msg = MIMEText(html_message, 'html', 'utf-8')
     msg['Subject'] = Header('Greetings', 'utf-8').encode()
     msg['From'] = _format_sender_receiver('Jesse <%s>' % user)
     msg['To'] = _format_sender_receiver('Receiver <%s>' % 'slt')
@@ -54,3 +54,4 @@ def main():
         server.quit()
 
 main()
+
