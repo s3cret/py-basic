@@ -1,3 +1,6 @@
+# tmp files
+tmp*
+
 # python s3cret file:
 oauth.py
 hidden.py

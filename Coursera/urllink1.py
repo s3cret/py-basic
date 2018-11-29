@@ -13,9 +13,10 @@ if not url.startswith('http'):
     print('Please prefix your url with http(s)://')
     quit()
 # set the request urlopen context
-# maybe you should promote a decode()
+# maybe you should promot a decode()
 # after you read the whole bunch of html page
 html = urllib.request.urlopen(url, context=ctx).read()
+html = html.decode()
 soup = BeautifulSoup(html, 'html.parser')
 
 # Retrieve all of the anchor tags
